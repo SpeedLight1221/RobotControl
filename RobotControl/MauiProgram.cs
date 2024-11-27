@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 
+
 namespace RobotControl
 {
     public static class MauiProgram
@@ -9,6 +10,7 @@ namespace RobotControl
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+       
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
