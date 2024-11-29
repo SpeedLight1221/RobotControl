@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-[assembly: Dependency(typeof(BluetoothConnector))]
+[assembly: Dependency(typeof(RobotControl.Platforms.Android.Bluetooth.BluetoothConnector))]
 namespace RobotControl.Platforms.Android.Bluetooth
 {
     class BluetoothConnector : IBluetoothConnector

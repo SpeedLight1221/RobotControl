@@ -11,6 +11,7 @@ namespace RobotControl
             InitializeComponent();
 
             MainPage = new AppShell();
+
         }
     }
 

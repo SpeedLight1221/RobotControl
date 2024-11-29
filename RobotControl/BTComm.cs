@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RobotControl.Platforms.Android
+namespace RobotControl
 {
     static class BTComm
-    {
+    {/*
 
         private const string ArduinoConName = "HC-05";
         static BluetoothSocket? Socket;
@@ -32,8 +32,8 @@ namespace RobotControl.Platforms.Android
 
         public static void SendData(string data)
         {
-            connector.Write()
+            connector.Write(Encoding.ASCII.GetBytes(data));
         }
-
+        */
     }
 }

@@ -22,7 +22,7 @@
             <ShellContent
                Title="Left Hand"
                ContentTemplate="{DataTemplate local:LHand}"
-               Route="MainPage" />  
+               Route="LHandPage" />  
         </Tab>
 
     </FlyoutItem>
