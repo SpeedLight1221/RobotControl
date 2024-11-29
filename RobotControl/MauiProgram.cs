@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 
 
+
 namespace RobotControl
 {
     public static class MauiProgram
@@ -19,6 +20,9 @@ namespace RobotControl
 
 #if DEBUG
     		builder.Logging.AddDebug();
+#endif
+#if ANDROID
+            DependencyService.Register< RobotControl.Platforms.Android.Bluetooth.BluetoothConnector >();
 #endif
 
             return builder.Build();

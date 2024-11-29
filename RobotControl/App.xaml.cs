@@ -1,7 +1,4 @@
-﻿
-
-
-namespace RobotControl
+﻿namespace RobotControl
 {
 
     public partial class App : Application
@@ -11,7 +8,7 @@ namespace RobotControl
             InitializeComponent();
 
             MainPage = new AppShell();
-
+           
         }
     }
 
@@ -23,6 +20,7 @@ namespace RobotControl
         List<string> GetConnectedDevices();
         void Connect(string deviceName);
 
+        public string test();
         public void Write(byte[] data);
     }
 }

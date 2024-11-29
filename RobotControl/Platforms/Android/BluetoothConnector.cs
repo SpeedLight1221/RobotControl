@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-[assembly: Dependency(typeof(RobotControl.Platforms.Android.Bluetooth.BluetoothConnector))]
+[assembly: Dependency(typeof(BluetoothConnector))]
 namespace RobotControl.Platforms.Android.Bluetooth
 {
     class BluetoothConnector : IBluetoothConnector
@@ -26,6 +26,12 @@ namespace RobotControl.Platforms.Android.Bluetooth
         public void Write(byte[] data) 
         { 
         
+        }
+
+
+        public string test()
+        {
+            return "tested";
         }
 
 
