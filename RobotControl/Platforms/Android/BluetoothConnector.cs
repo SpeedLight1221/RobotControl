@@ -15,17 +15,23 @@ namespace RobotControl.Platforms.Android.Bluetooth
         BluetoothAdapter adapter;
         private const string SspUuid = "00001101-0000-1000-8000-00805f9b34fb";
         private BluetoothSocket? socket;
-        public void Connect(string deviceName)
+        public bool Connect(string deviceName)
         {
             var device = adapter.BondedDevices.FirstOrDefault(d=> d.Name == deviceName);
             socket = device.CreateRfcommSocketToServiceRecord(UUID.FromString(SspUuid));
             socket.Connect();
+            if(socket.IsConnected) {return true;}
+            else return false;
         
         }
 
         public void Write(byte[] data) 
-        { 
-        
+        {
+            foreach(byte b in data)
+            {
+                socket.OutputStream.WriteByte(b);
+            }
+              
         }
 
 

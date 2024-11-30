@@ -1,4 +1,6 @@
-﻿namespace RobotControl
+﻿using RobotControl.Classes;
+
+namespace RobotControl
 {
     public partial class MainPage : ContentPage
     {
@@ -7,7 +9,13 @@
         public MainPage()
         {
             InitializeComponent();
+            Setup();
         }
+
+        public async void Setup()
+        {
+            Settings.BTPermission = await RequestPermisions();
+        } 
 
         private async void OnCounterClicked(object sender, EventArgs e)
         {
@@ -18,6 +26,26 @@
             catch (Exception ex)
             {
                 
+            }
+        }
+
+
+
+        private async Task<bool> RequestPermisions()
+        {
+            PermissionStatus status = await Permissions.CheckStatusAsync<Permissions.Bluetooth>();
+
+            if (status != PermissionStatus.Granted)
+            {
+                status = await Permissions.RequestAsync<Permissions.Bluetooth>();
+                if (status == PermissionStatus.Granted) 
+                    return true;
+                else return false;
+              
+            }
+            else
+            {
+                return true;
             }
         }
     }

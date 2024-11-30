@@ -1,3 +1,5 @@
+using RobotControl.Classes;
+
 namespace RobotControl
 {
 
@@ -20,27 +22,46 @@ namespace RobotControl
 
         }
 
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            if (Settings.BTPermission == false)
+            {
+                await DisplayAlert("Bluetooth ", "Bluetooth permission not granted.", "ok");
+            }
+        }
+
         private async void SPinky_ValueChanged(object sender, ValueChangedEventArgs e)
         {
+            if (Settings.BTPermission == false) { return; }
 
             var connector = DependencyService.Get<IBluetoothConnector>();
-            
-            if(connector == null)
+
+            if (connector == null)
             {
-                await DisplayAlert("er", "connector is null", "huh");
+                await DisplayAlert("er", "connector is null", "ok");
+            }
+
+            string arduino = connector.GetConnectedDevices().FirstOrDefault(x => x == "HC-05");
+
+            if (arduino == null)
+            {
+                await DisplayAlert("Bluetooth", "Device not found!", "ok");
+                return;
             }
             else
             {
-                await DisplayAlert("er", "isnt null", "huh");
+                if (connector.Connect(arduino))
+                {
+                    connector.Write([2,14,255]);
+                }
+
             }
 
-            string x = "";
-            foreach(string s in connector.GetConnectedDevices())
-            {
-                x += s + "\n";
-            }
 
-            await DisplayAlert("er", x+ "", "huh");
+
+
+
 
 
 

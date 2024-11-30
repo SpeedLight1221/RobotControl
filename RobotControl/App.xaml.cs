@@ -18,7 +18,7 @@
     public interface IBluetoothConnector
     {
         List<string> GetConnectedDevices();
-        void Connect(string deviceName);
+        bool Connect(string deviceName);
 
         public string test();
         public void Write(byte[] data);
