@@ -1,4 +1,6 @@
+
 using RobotControl.Classes;
+using System.Drawing;
 
 namespace RobotControl
 {
@@ -14,11 +16,11 @@ namespace RobotControl
 
 
 
-
+      
         public LHand()
         {
             InitializeComponent();
-
+          
 
         }
 

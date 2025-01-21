@@ -1,4 +1,7 @@
-﻿using Android.Bluetooth;
+﻿
+#if ANDROID
+using Android.Bluetooth;
+#endif
 using System;
 using System.Collections.Generic;
 using System.Linq;

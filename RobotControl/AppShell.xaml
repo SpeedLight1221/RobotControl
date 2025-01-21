@@ -6,7 +6,9 @@
     xmlns:local="clr-namespace:RobotControl"
     Shell.FlyoutBehavior="Flyout"
     Title="RobotControl"
-    MaximumWidthRequest="500">
+
+
+    >
 
     <FlyoutItem Title="Main" >
         <Tab>
