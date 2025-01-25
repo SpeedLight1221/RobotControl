@@ -33,7 +33,11 @@ namespace RobotControl
             }
         }
 
-        private async void SPinky_ValueChanged(object sender, ValueChangedEventArgs e)
+      
+
+    
+
+        private async void LPinkySlider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
             if (Settings.BTPermission == false) { return; }
 
@@ -55,36 +59,28 @@ namespace RobotControl
             {
                 if (connector.Connect(arduino))
                 {
-                    connector.Write([2,14,255]);
+                    connector.Write([2, 14, 255]);
                 }
 
             }
-
-
-
-
-
-
-
-
         }
 
-        private void SRing_ValueChanged(object sender, ValueChangedEventArgs e)
+        private void LRingSlider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
 
         }
 
-        private void SMiddle_ValueChanged(object sender, ValueChangedEventArgs e)
+        private void LMiddleSlider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
 
         }
 
-        private void SIndex_ValueChanged(object sender, ValueChangedEventArgs e)
+        private void LIndexSlider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
 
         }
 
-        private void SThumb_ValueChanged(object sender, ValueChangedEventArgs e)
+        private void LThumbSlider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
 
         }

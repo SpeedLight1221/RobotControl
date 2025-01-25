@@ -39,11 +39,11 @@
                         
 
                         <VerticalStackLayout Margin="-40"  WidthRequest="250" VerticalOptions="Center">
-                        <Slider MinimumTrackColor="Cyan" MaximumTrackColor="Black"  VerticalOptions="Start" HorizontalOptions="Start" WidthRequest="200"  Margin="-10,0,0,0" HeightRequest="40"></Slider>
-                        <Slider MinimumTrackColor="Cyan" MaximumTrackColor="Black"  VerticalOptions="Start" HorizontalOptions="Start" WidthRequest="200" Margin="50,0,0,0" HeightRequest="40"></Slider>
-                        <Slider WidthRequest="200"  MinimumTrackColor="Cyan" MaximumTrackColor="Black"  VerticalOptions="Start" HorizontalOptions="Start" Margin="60,0,0,5" HeightRequest="40"></Slider>
-                        <Slider WidthRequest="200"  MinimumTrackColor="Cyan" MaximumTrackColor="Black"  VerticalOptions="Start" HorizontalOptions="Start" Margin="50,0,0,25" HeightRequest="40"></Slider>
-                        <Slider WidthRequest="120"  MinimumTrackColor="Cyan" MaximumTrackColor="Black"  VerticalOptions="Start" HorizontalOptions="Start" Margin="25,0,0,-5" HeightRequest="40"></Slider>
+                        <Slider x:Name="LPinkySlider" ValueChanged="LPinkySlider_ValueChanged" MinimumTrackColor="Cyan" MaximumTrackColor="Black"  VerticalOptions="Start" HorizontalOptions="Start" WidthRequest="200"  Margin="-10,0,0,0" HeightRequest="40"></Slider>
+                        <Slider x:Name="LRingSlider" ValueChanged="LRingSlider_ValueChanged" MinimumTrackColor="Cyan" MaximumTrackColor="Black"  VerticalOptions="Start" HorizontalOptions="Start" WidthRequest="200" Margin="50,0,0,0" HeightRequest="40"></Slider>
+                        <Slider x:Name="LMiddleSlider" ValueChanged="LMiddleSlider_ValueChanged" WidthRequest="200"  MinimumTrackColor="Cyan" MaximumTrackColor="Black"  VerticalOptions="Start" HorizontalOptions="Start" Margin="60,0,0,5" HeightRequest="40"></Slider>
+                        <Slider x:Name="LIndexSlider" ValueChanged="LIndexSlider_ValueChanged" WidthRequest="200"  MinimumTrackColor="Cyan" MaximumTrackColor="Black"  VerticalOptions="Start" HorizontalOptions="Start" Margin="50,0,0,25" HeightRequest="40"></Slider>
+                        <Slider x:Name="LThumbSlider" ValueChanged="LThumbSlider_ValueChanged" WidthRequest="120"  MinimumTrackColor="Cyan" MaximumTrackColor="Black"  VerticalOptions="Start" HorizontalOptions="Start" Margin="25,0,0,-5" HeightRequest="40"></Slider>
                         </VerticalStackLayout>
                   
 

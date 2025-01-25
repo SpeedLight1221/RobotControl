@@ -12,50 +12,66 @@ namespace RobotControl.Platforms.Android.Bluetooth
     class BluetoothConnector : IBluetoothConnector
     {
 
+
+
         BluetoothAdapter adapter;
-        private const string SspUuid = "00001101-0000-1000-8000-00805f9b34fb";
+        private const string SspUuid = "00001101-0000-1000-8000-00805F9B34FB";
         private BluetoothSocket? socket;
         public bool Connect(string deviceName)
         {
-            var device = adapter.BondedDevices.FirstOrDefault(d=> d.Name == deviceName);
+            var device = adapter.BondedDevices.FirstOrDefault(d => d.Name == deviceName);
             socket = device.CreateRfcommSocketToServiceRecord(UUID.FromString(SspUuid));
-            socket.Connect();
-            if(socket.IsConnected) {return true;}
+            adapter.CancelDiscovery();
+            try
+            {
+                socket.Connect();
+            }
+            catch (Java.IO.IOException e)
+            {
+                return false;
+
+            }
+
+
+
+            if (socket.IsConnected) { return true; }
             else return false;
-        
+
         }
 
-        public void Write(byte[] data) 
+        public void Disconnect()
         {
-            foreach(byte b in data)
+            if (socket != null || !socket.IsConnected) 
+            { 
+                socket.Close();
+            }
+        }
+
+        public void Write(byte[] data)
+        {
+            foreach (byte b in data)
             {
                 socket.OutputStream.WriteByte(b);
             }
-              
-        }
 
-
-        public string test()
-        {
-            return "tested";
         }
 
 
         public List<string> GetConnectedDevices()
         {
             adapter = BluetoothAdapter.DefaultAdapter;
-            if (adapter == null) 
+            if (adapter == null)
             {
                 throw new Exception("No Bluetooth adapter");
             }
 
             if (adapter.IsEnabled)
-            { 
-                if(adapter.BondedDevices.Count >0)
+            {
+                if (adapter.BondedDevices.Count > 0)
                 {
                     return adapter.BondedDevices.Select(x => x.Name).ToList();
                 }
-            
+
             }
             else
             {
@@ -63,10 +79,47 @@ namespace RobotControl.Platforms.Android.Bluetooth
             }
 
             return new List<string>();
-                
+
         }
+
+        public bool isConnected()
+        {
+            return socket.IsConnected;
+        }
+
+
+
+
+
+
+
+
+
+
+        public static async Task<bool> RequestPermisions()
+        {
+            PermissionStatus status = await Permissions.CheckStatusAsync<Permissions.Bluetooth>();
+
+            if (status != PermissionStatus.Granted)
+            {
+                status = await Permissions.RequestAsync<Permissions.Bluetooth>();
+                if (status == PermissionStatus.Granted)
+                    return true;
+                else return false;
+
+            }
+            else
+            {
+                return true;
+            }
+
+
+        }
+
+        
+
+
+
+
     }
-
-
-
 }

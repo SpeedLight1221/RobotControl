@@ -20,7 +20,9 @@
         List<string> GetConnectedDevices();
         bool Connect(string deviceName);
 
-        public string test();
+        public bool isConnected();
+
+        public void Disconnect();
         public void Write(byte[] data);
     }
 }

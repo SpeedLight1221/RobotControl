@@ -10,6 +10,7 @@ namespace RobotControl.Classes
     {
 
         public static bool BTPermission = false;
-        public static bool BTDeviceFound = false;
+        
+        public static IBluetoothConnector BTConnector;
     }
 }

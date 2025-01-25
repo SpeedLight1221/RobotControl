@@ -10,6 +10,12 @@
 
     >
 
+    <Shell.TitleView>
+        <HorizontalStackLayout HorizontalOptions="End"  >
+            <Button Margin="10,5" Clicked="BTConnBtn_Clicked" BackgroundColor="Transparent" TextColor="White" Text="⥮" FontAttributes="Bold" FontSize="20" x:Name="BTConnBtn"></Button>
+        </HorizontalStackLayout>
+    </Shell.TitleView>
+
     <FlyoutItem Title="Main" >
         <Tab>
             <ShellContent
