@@ -16,6 +16,7 @@ namespace RobotControl
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                    fonts.AddFont("Hexa.ttf", "Hexa");
                 });
 
 #if DEBUG

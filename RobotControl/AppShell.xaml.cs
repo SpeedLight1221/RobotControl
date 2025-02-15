@@ -7,24 +7,35 @@ namespace RobotControl
 {
     public partial class AppShell : Shell
     {
+        //public static AppShell instance;
         public AppShell()
         {
             InitializeComponent();
+            //instance = this;
         }
 
         private async void BTConnBtn_Clicked(object sender, EventArgs e)
         {
-            if (Settings.BTConnector != null && Settings.BTConnector.isConnected() )
+            if (BTComm.BTConnector != null && BTComm.BTConnector.isConnected() )
             { 
-                Settings.BTConnector.Disconnect();
+                BTComm.BTConnector.Disconnect();
                 BTConnBtn.Text = "⥮";
 
 
             }
             else
             {
+                string result = await BTComm.ConnectToArduino();
 
-                BTConnBtn.Text = await ConnectToArduino();
+                if(result == "")
+                {
+                    BTConnBtn.Text = "✓";
+                }
+                else
+                {
+                    DisplayAlert("Connection failed", result, "Dismiss");
+                }
+               
             }
 
             
@@ -32,44 +43,7 @@ namespace RobotControl
         }
 
 
-        public async Task<string> ConnectToArduino()
-        {
-            if (await CheckBTPerms() == false)
-            {
-                await DisplayAlert("Connection Error", "Bluetooth permission are required", "Dismiss");
-                return "⤫";
-            }
-            else
-            {
-                Settings.BTPermission = true;
-            }
-
-            if (!GetConnector())
-            {
-                await DisplayAlert("Connection Error", "Bluetooth Connector not found", "Dismiss");
-                return "⤫";
-            }
-
-
-
-            string Device = FindDevice();
-            if (Device == null)
-            {
-                await DisplayAlert("Connection Error", "Device not found", "Dismiss");
-                return "⤫";
-            }
-
-            if (!Settings.BTConnector.Connect(Device))
-            {
-
-                await DisplayAlert("Connection Error", "Connection Failed", "Dismiss");
-                return "⤫";
-            }
-
-
-            
-            return "✓";
-        }
+        
 
 
 
@@ -99,9 +73,9 @@ namespace RobotControl
 
         public bool GetConnector()
         {
-            Settings.BTConnector = DependencyService.Get<IBluetoothConnector>();
+            BTComm.BTConnector = DependencyService.Get<IBluetoothConnector>();
 
-            if (Settings.BTConnector == null)
+            if (BTComm.BTConnector == null)
             {
                 return false;
             }
@@ -113,7 +87,7 @@ namespace RobotControl
 
         public string FindDevice()
         {
-            return Settings.BTConnector.GetConnectedDevices().FirstOrDefault(x => x == "HC-05");
+            return BTComm.BTConnector.GetConnectedDevices().FirstOrDefault(x => x == "HC-05");
         }
 
         

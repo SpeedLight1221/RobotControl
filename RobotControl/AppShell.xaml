@@ -10,11 +10,15 @@
 
     >
 
-    <Shell.TitleView>
-        <HorizontalStackLayout HorizontalOptions="End"  >
-            <Button Margin="10,5" Clicked="BTConnBtn_Clicked" BackgroundColor="Transparent" TextColor="White" Text="⥮" FontAttributes="Bold" FontSize="20" x:Name="BTConnBtn"></Button>
-        </HorizontalStackLayout>
+    <Shell.TitleView >
+        <Grid >
+            <Button WidthRequest="80" Text="Send" TextColor="White" BackgroundColor="#2d0c98" FontAttributes="Bold" HeightRequest="50" HorizontalOptions="Center" Margin="0,0,80,0"> </Button>
+            <Button Margin="10,5" Clicked="BTConnBtn_Clicked" HorizontalOptions="End" BackgroundColor="Transparent" TextColor="White" Text="⥮" FontAttributes="Bold" FontSize="20" x:Name="BTConnBtn"></Button>
+        </Grid>
+        
     </Shell.TitleView>
+
+   
 
     <FlyoutItem Title="Main" >
         <Tab>

@@ -1,4 +1,5 @@
-﻿namespace RobotControl
+﻿
+namespace RobotControl
 {
 
     public partial class App : Application
@@ -10,6 +11,9 @@
             MainPage = new AppShell();
            
         }
+
+
+        
     }
 
     

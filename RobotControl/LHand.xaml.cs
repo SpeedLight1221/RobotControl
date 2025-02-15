@@ -7,12 +7,12 @@ namespace RobotControl
 
     public partial class LHand : ContentPage
     {
-        public int L_PinkyAngle;
-        public int L_RingAngle;
-        public int L_MiddleAngle;
-        public int L_IndexAngle;
-        public int L_ThumbAngle;
-        public int L_RotaAngle;
+        public int LPinky_Angle;
+        public int LRing_Angle;
+        public int LMiddle_Angle;
+        public int LIndex_Angle;
+        public int LThumb_Angle;
+        public int LRota_Angle;
 
 
 
@@ -39,30 +39,9 @@ namespace RobotControl
 
         private async void LPinkySlider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-            if (Settings.BTPermission == false) { return; }
+            LPinky_Label.Text = (LPinky_Angle +=1).ToString();
 
-            var connector = DependencyService.Get<IBluetoothConnector>();
-
-            if (connector == null)
-            {
-                await DisplayAlert("er", "connector is null", "ok");
-            }
-
-            string arduino = connector.GetConnectedDevices().FirstOrDefault(x => x == "HC-05");
-
-            if (arduino == null)
-            {
-                await DisplayAlert("Bluetooth", "Device not found!", "ok");
-                return;
-            }
-            else
-            {
-                if (connector.Connect(arduino))
-                {
-                    connector.Write([2, 14, 255]);
-                }
-
-            }
+            
         }
 
         private void LRingSlider_ValueChanged(object sender, ValueChangedEventArgs e)

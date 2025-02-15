@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace RobotControl.Classes
 {
-    public static class Settings
+    class QuickPosition
     {
+        public string Name;
 
-        public static bool BTPermission = false;
-        
-        
+        public List<byte[]> Angles = new List<byte[]>();
+
     }
 }
