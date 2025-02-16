@@ -13,7 +13,7 @@ namespace RobotControl
 {
     static  class BTComm
     {   
-       public static async void SendData()
+       public static async void SendPositions()
        {
             foreach (ServoData s in ServoData.ServoDataList.Where(x=> x.NewAngle != x.CurrentAngle)) 
             {
@@ -21,6 +21,15 @@ namespace RobotControl
 
             }
        }
+
+
+        public static async void SendBytes(byte[] bytes) 
+        { 
+            if(bytes != null &&bytes.Length ==3 )
+            {
+                BTComm.BTConnector.Write(bytes);
+            }
+        }
 
         public static IBluetoothConnector BTConnector;
 
