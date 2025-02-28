@@ -21,7 +21,7 @@ namespace RobotControl.Platforms.Android.Bluetooth
         {
             var device = adapter.BondedDevices.FirstOrDefault(d => d.Name == deviceName);
             socket = device.CreateRfcommSocketToServiceRecord(UUID.FromString(SspUuid));
-            adapter.CancelDiscovery();
+            adapter.CancelDiscovery();  
             try
             {
                 socket.Connect();

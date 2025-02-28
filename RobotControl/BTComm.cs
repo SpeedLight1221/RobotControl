@@ -11,7 +11,7 @@ using RobotControl.Classes;
 
 namespace RobotControl
 {
-    static  class BTComm
+    static class BTComm
     {   
        public static async void SendPositions()
        {

@@ -1,5 +1,6 @@
 ﻿
 using RobotControl.Classes;
+using System.Diagnostics;
 
 
 
@@ -12,6 +13,8 @@ namespace RobotControl
         {
             InitializeComponent();
             //instance = this;
+            Started = DateTime.Now;
+            
         }
 
         private async void BTConnBtn_Clicked(object sender, EventArgs e)
@@ -90,8 +93,25 @@ namespace RobotControl
             return BTComm.BTConnector.GetConnectedDevices().FirstOrDefault(x => x == "HC-05");
         }
 
-        
+        private DateTime Started;
+        private int LastSend = 0;
+        private TimeSpan GetTimeSinceStart()
+        {
+            return DateTime.Now - Started;
+        }
 
+        private async void Send_Clicked(object sender, EventArgs e)
+        {
+            if(GetTimeSinceStart().Seconds > LastSend + 5)
+            {
+                LastSend = GetTimeSinceStart().Seconds;
+                BTComm.SendPositions();
+            }
+            else
+            {
+                await DisplayAlert("Delay", "The send button is on delay. Please wait a few seconds before sending again","Ok");
+            }
+        }
     } 
 
 }

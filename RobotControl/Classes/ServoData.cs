@@ -40,6 +40,29 @@ namespace RobotControl.Classes
         public readonly byte MinAngle;
 
         public byte CurrentAngle = 0;
-        public byte NewAngle = 0;
+        public byte NewAngle {
+            get{
+                return newAngle;
+            }
+            set 
+            {
+                if (value <= MaxAngle && value >= MinAngle)
+                {
+                    newAngle = value;
+                }
+                else if (value > MaxAngle)
+                {
+                    newAngle = MaxAngle;
+                }
+                else if (value < MinAngle) 
+                { 
+                    newAngle = MinAngle; 
+                }
+               
+            }
+        
+        
+        }
+        private byte newAngle = 0;
     }
 }
