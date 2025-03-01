@@ -7,12 +7,7 @@ namespace RobotControl
 
     public partial class LHand : ContentPage
     {
-        public int LPinky_Angle;
-        public int LRing_Angle;
-        public int LMiddle_Angle;
-        public int LIndex_Angle;
-        public int LThumb_Angle;
-        public int LRota_Angle;
+     
 
 
 
@@ -37,31 +32,48 @@ namespace RobotControl
 
     
 
-        private async void LPinkySlider_ValueChanged(object sender, ValueChangedEventArgs e)
+        private  void LPinkySlider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-            LPinky_Label.Text = (LPinky_Angle +=1).ToString();
+            int val = (int)LPinky_Slider.Value;
+            LPinky_Label.Text = val.ToString();
+            ServoData.ServoDataList.Find(x => x.Name == "Left_Pinky").NewAngle = (byte)val;
 
-            
+
         }
 
         private void LRingSlider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-
+            int val = (int)LRing_Slider.Value;
+            LRing_Label.Text = val.ToString();
+            ServoData.ServoDataList.Find(x => x.Name == "Left_Ring").NewAngle = (byte)val;
         }
 
         private void LMiddleSlider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-
+            int val = (int)LMiddle_Slider.Value;
+            LRing_Label.Text = val.ToString();
+            ServoData.ServoDataList.Find(x => x.Name == "Left_Middle").NewAngle = (byte)val;
         }
 
         private void LIndexSlider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-
+            int val = (int)LIndex_Slider.Value;
+            LIndex_Label.Text = val.ToString();
+            ServoData.ServoDataList.Find(x => x.Name == "Left_Index").NewAngle = (byte)val;
         }
 
         private void LThumbSlider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
+            int val = (int)LRing_Slider.Value;
+            LThumb_Label.Text = val.ToString();
+            ServoData.ServoDataList.Find(x => x.Name == "Left_Thumb").NewAngle = (byte)val;
+        }
 
+        private void LWrist_Slider_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            int val = (int)LWrist_Slider.Value;
+            LWrist_Label.Text = val.ToString();
+            ServoData.ServoDataList.Find(x => x.Name == "Left_Wrist").NewAngle = (byte)val;
         }
     }
 }

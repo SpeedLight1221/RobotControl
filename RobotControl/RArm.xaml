@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RobotControl.RArm"
+             Title="RArm">
+    <VerticalStackLayout  Background="#202020">
+
+        <Label
+        VerticalTextAlignment="Center"
+        WidthRequest="400"
+        FontAttributes="Bold"
+        FontFamily="Hexa"
+        Text="Right Arm"
+        FontSize="50"
+       
+        HorizontalTextAlignment="Center">
+
+        </Label>
+
+
+        <AbsoluteLayout  WidthRequest="400" HeightRequest="600" >
+
+
+
+
+            <HorizontalStackLayout HorizontalOptions="Center" BackgroundColor="Transparent" AnchorX="0" AnchorY="0" AbsoluteLayout.LayoutBounds="0,0,400,600" >
+
+
+
+
+                <Image  Source="armwire.png" WidthRequest="400" HeightRequest="600" >
+
+                </Image>
+
+
+
+
+            </HorizontalStackLayout>
+
+
+
+
+
+            <VerticalStackLayout WidthRequest="100"  HeightRequest="40"  BackgroundColor="#44FFFFFF"   AnchorX="0" AnchorY="0" AbsoluteLayout.LayoutBounds="100,-200,400,600"   >
+                <Slider x:Name="RShoulder_Slider"  MinimumTrackColor="Cyan" 
+                        MaximumTrackColor="Black" ThumbColor="#202020"  VerticalOptions="Start" 
+                        HorizontalOptions="Start" WidthRequest="100"   
+                        Margin="0,0" HeightRequest="40"
+                        Maximum="65" Minimum="35"
+                        ValueChanged="RShoulder_Slider_ValueChanged"></Slider>
+
+            </VerticalStackLayout>
+
+
+            <VerticalStackLayout WidthRequest="150"  HeightRequest="40" Rotation="-90" BackgroundColor="#44FFFFFF"     AnchorX="0" AnchorY="0" AbsoluteLayout.LayoutBounds="70,-90,400,600"   >
+
+                <Slider x:Name="RRotShould_Slider"  MinimumTrackColor="Cyan" 
+                        MaximumTrackColor="Black" ThumbColor="#202020"  VerticalOptions="Start" HorizontalOptions="Start" 
+                        WidthRequest="150"   Margin="0,0" HeightRequest="40"
+                        Maximum="75" Minimum="30"
+                        ValueChanged="RRotShould_Slider_ValueChanged"></Slider>
+
+            </VerticalStackLayout>
+
+            <VerticalStackLayout WidthRequest="150"  HeightRequest="40"  BackgroundColor="#44FFFFFF"   AnchorX="0" AnchorY="0" AbsoluteLayout.LayoutBounds="-85,-90,400,600"   >
+                <Slider x:Name="RRotBicep_Slider"  MinimumTrackColor="Cyan" 
+                        MaximumTrackColor="Black" ThumbColor="#202020"  
+                        VerticalOptions="Start" HorizontalOptions="Start" 
+                        WidthRequest="150" Margin="0,0" HeightRequest="40"
+                        Maximum="145" Minimum="75"
+                        ValueChanged="RRotBicep_Slider_ValueChanged"></Slider>
+
+            </VerticalStackLayout>
+
+
+            <VerticalStackLayout WidthRequest="150" Rotation="-90" HeightRequest="40"  BackgroundColor="#44FFFFFF"   AnchorX="0" AnchorY="0" AbsoluteLayout.LayoutBounds="-35,150,400,600"   >
+                <Slider x:Name="RBicep_Slider" 
+                        MinimumTrackColor="Cyan" MaximumTrackColor="Black" 
+                        ThumbColor="#202020"  VerticalOptions="Start" 
+                        HorizontalOptions="Start" WidthRequest="150"   
+                        Margin="0,0" HeightRequest="40"
+                        Maximum="40" Minimum="0"
+                        ValueChanged="RBicep_Slider_ValueChanged" ></Slider>
+
+            </VerticalStackLayout>
+
+
+
+
+
+
+
+
+        </AbsoluteLayout>
+
+
+
+        <HorizontalStackLayout HorizontalOptions="CenterAndExpand"  >
+            <Label x:Name="RShoulder_Label" Text="35" WidthRequest="35" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" Margin="10" HeightRequest="40" ></Label>
+            <Label x:Name="RRotShould_Label" Text="30" WidthRequest="35" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" Margin="10" HeightRequest="40"></Label>
+            <Label x:Name="RRotBicep_Label" Text="75" WidthRequest="35" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" Margin="10" HeightRequest="40"></Label>
+            <Label x:Name="RBicep_Label" Text="0" WidthRequest="35" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" Margin="10" HeightRequest="40"></Label>
+           
+        </HorizontalStackLayout>
+
+
+    </VerticalStackLayout>
+</ContentPage>

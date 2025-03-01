@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RobotControl.RHand"
+             Title="RHand"
+             Padding="0,10,0,0">
+    <VerticalStackLayout  Background="#202020">
+
+        <Label
+        VerticalTextAlignment="Center"
+        WidthRequest="400"
+        FontAttributes="Bold"
+        FontFamily="Hexa"
+        Text="Right Hand"
+        FontSize="50"
+       
+        HorizontalTextAlignment="Center">
+
+        </Label>
+        <VerticalStackLayout WidthRequest="400" >
+            <AbsoluteLayout WidthRequest="400" HeightRequest="500" BackgroundColor="#202020" >
+
+                <HorizontalStackLayout HorizontalOptions="Center" BackgroundColor="Transparent" AnchorX="0" AnchorY="0" AbsoluteLayout.LayoutBounds="0,0,400,500" >
+                    <Image  Source="handwireright.png"  WidthRequest="400" HeightRequest="400" >
+
+                    </Image>
+
+
+
+
+                </HorizontalStackLayout>
+                <Border StrokeShape="RoundRectangle 10,20,10,20" WidthRequest="150" StrokeThickness="0"  HeightRequest="30" Rotation="-74" BackgroundColor="#CCFFFFFF"     AnchorX="0" AnchorY="0" AbsoluteLayout.LayoutBounds="173,50,400,500"  >
+
+                    <Slider x:Name="RPinky_Slider" Maximum="120" Minimum="0"  MinimumTrackColor="Cyan" MaximumTrackColor="Black" ThumbColor="#202020"  VerticalOptions="Start" HorizontalOptions="Start" WidthRequest="150" ValueChanged="RPinky_Slider_ValueChanged"   HeightRequest="30"  ></Slider>
+
+                </Border>
+
+                <Border WidthRequest="150" StrokeShape="RoundRectangle 10,20,10,20"  HeightRequest="30" Rotation="-85" BackgroundColor="#CCFFFFFF"    AnchorX="0" AnchorY="0" AbsoluteLayout.LayoutBounds="134,15,400,500"   >
+                    <Slider x:Name="RRing_Slider"  Maximum="120" Minimum="0"   MinimumTrackColor="Cyan" MaximumTrackColor="Black" ThumbColor="#202020"  VerticalOptions="Start" HorizontalOptions="Start" WidthRequest="150" ValueChanged="RRing_Slider_ValueChanged"  HeightRequest="30"     ></Slider>
+                </Border>
+
+                <Border WidthRequest="150" StrokeShape="RoundRectangle 10,20,10,20"  HeightRequest="30" Rotation="-90" BackgroundColor="#CCFFFFFF"    AnchorX="0" AnchorY="0" AbsoluteLayout.LayoutBounds="77,-10,400,500"   >
+                    <Slider x:Name="RMiddle_Slider" Maximum="120" Minimum="0"   WidthRequest="150"  MinimumTrackColor="Cyan" ThumbColor="#202020" MaximumTrackColor="Black"  VerticalOptions="Start" HorizontalOptions="Start" ValueChanged="RMiddle_Slider_ValueChanged"  HeightRequest="30"  ></Slider>
+                </Border>
+
+                <Border WidthRequest="150" StrokeShape="RoundRectangle 10,20,10,20" HeightRequest="30" Rotation="-94" BackgroundColor="#CCFFFFFF"     AnchorX="0" AnchorY="0" AbsoluteLayout.LayoutBounds="25,-5,400,500"   >
+                    <Slider x:Name="RIndex_Slider"  Maximum="120" Minimum="0"   WidthRequest="150"  MinimumTrackColor="Cyan" ThumbColor="#202020" MaximumTrackColor="Black"   VerticalOptions="Start" HorizontalOptions="Start" ValueChanged="RIndex_Slider_ValueChanged"  HeightRequest="30"   ></Slider>
+                </Border>
+
+                <Border WidthRequest="110" StrokeShape="RoundRectangle 10,20,10,20"  HeightRequest="30" Rotation="-143" BackgroundColor="#CCFFFFFF"     AnchorX="0" AnchorY="0" AbsoluteLayout.LayoutBounds="-20,110,400,500"   >
+                    <Slider x:Name="RThumb_Slider" Maximum="120" Minimum="0"   WidthRequest="120"  MinimumTrackColor="Cyan" ThumbColor="#202020"  MaximumTrackColor="Black"  VerticalOptions="Start" HorizontalOptions="Start" ValueChanged="RThumb_Slider_ValueChanged"  HeightRequest="30"   ></Slider>
+                </Border>
+
+
+                <Border WidthRequest="150" StrokeShape="RoundRectangle 20,20,20,20"  HeightRequest="30"  BackgroundColor="#CCFFFFFF"     AnchorX="0" AnchorY="0" AbsoluteLayout.LayoutBounds="40,168,400,500"   >
+
+                    <Slider  x:Name="RWrist_Slider" Margin="5,10" WidthRequest="150" 
+                 Maximum="150" HeightRequest="20"  Minimum="0"  ThumbColor="#202020" 
+                 MinimumTrackColor="Cyan"  MaximumTrackColor="White" 
+                             ValueChanged="RWrist_Slider_ValueChanged"
+                >
+
+                    </Slider>
+                </Border>
+
+
+
+
+
+            </AbsoluteLayout>
+            <HorizontalStackLayout HorizontalOptions="CenterAndExpand"  >
+                <Label x:Name="RThumb_Label" Text="0" WidthRequest="35" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" Margin="10" HeightRequest="40"></Label>
+                <Label x:Name="RIndex_Label" Text="0" WidthRequest="35" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" Margin="10" HeightRequest="40"></Label>
+                <Label x:Name="RMiddle_Label" Text="0" WidthRequest="35" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" Margin="10" HeightRequest="40"></Label>
+                <Label x:Name="RRing_Label" Text="0" WidthRequest="35" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" Margin="10" HeightRequest="40"></Label>
+                <Label x:Name="RPinky_Label" Text="0" WidthRequest="35" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" Margin="10" HeightRequest="40" ></Label>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+
+
+        <VerticalStackLayout   WidthRequest="400">
+
+            <Label x:Name="RWrist_Label"  TextColor="White" FontSize="Medium"  HorizontalOptions="Center" FontAttributes="Bold" VerticalTextAlignment="Center"  Text="120"></Label>
+        </VerticalStackLayout>
+
+
+    </VerticalStackLayout>
+</ContentPage>

@@ -38,6 +38,24 @@
         </Tab>
 
     </FlyoutItem>
+    <FlyoutItem Title="Right Hand" >
+        <Tab>
+            <ShellContent
+         Title="Right Arm"
+         ContentTemplate="{DataTemplate local:RHand}"
+         Route="LHandPage" />
+        </Tab>
+
+    </FlyoutItem>
+    <FlyoutItem Title="Right Arm" >
+        <Tab>
+            <ShellContent
+           Title="Right Arm"
+           ContentTemplate="{DataTemplate local:RArm}"
+           Route="LHandPage" />
+        </Tab>
+
+    </FlyoutItem>
 
 </Shell>
  

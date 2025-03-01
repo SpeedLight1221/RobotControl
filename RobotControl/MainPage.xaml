@@ -6,25 +6,28 @@
     
 
     <ScrollView>
-        <Grid>
+        <Grid RowDefinitions="*,*,*">
 
-
-
-
-
-            <Grid VerticalOptions="End" Padding="5" HeightRequest="200" ColumnDefinitions="*,*,*,*,*" RowDefinitions="*,*">
-                <Button Clicked="QuickPos_Clicked" HeightRequest="70" WidthRequest="70" Margin="5" Grid.Column="0" Grid.Row="0" x:Name="1" Text="1" FontSize="45" FontAttributes="Bold" BackgroundColor="#2d0c98" TextColor="White" ></Button>
-                <Button Clicked="QuickPos_Clicked" HeightRequest="70" WidthRequest="70" Margin="5" Grid.Column="1" Grid.Row="0" x:Name="2" Text="2" FontSize="45" FontAttributes="Bold" BackgroundColor="#2d0c98" TextColor="White" ></Button>
-                <Button Clicked="QuickPos_Clicked" HeightRequest="70" WidthRequest="70" Margin="5" Grid.Column="3" Grid.Row="0" x:Name="4" Text="4" FontSize="45" FontAttributes="Bold" BackgroundColor="#2d0c98" TextColor="White" ></Button>
-                <Button Clicked="QuickPos_Clicked" HeightRequest="70" WidthRequest="70" Margin="5" Grid.Column="2" Grid.Row="0" x:Name="3" Text="3" FontSize="45" FontAttributes="Bold" BackgroundColor="#2d0c98" TextColor="White" ></Button>
-                <Button Clicked="QuickPos_Clicked" HeightRequest="70" WidthRequest="70" Margin="5" Grid.Column="4" Grid.Row="0" x:Name="5" Text="5" FontSize="45" FontAttributes="Bold" BackgroundColor="#2d0c98" TextColor="White" ></Button>
-                        
-                <Button Clicked="QuickPos_Clicked" HeightRequest="70" WidthRequest="70" Margin="5" Grid.Column="0" Grid.Row="1" x:Name="6" Text="6" FontSize="45" FontAttributes="Bold" BackgroundColor="#2d0c98" TextColor="White" ></Button>
-                <Button Clicked="QuickPos_Clicked" HeightRequest="70" WidthRequest="70" Margin="5" Grid.Column="1" Grid.Row="2" x:Name="7" Text="7" FontSize="45" FontAttributes="Bold" BackgroundColor="#2d0c98" TextColor="White" ></Button>
-                <Button Clicked="QuickPos_Clicked" HeightRequest="70" WidthRequest="70" Margin="5" Grid.Column="2" Grid.Row="3" x:Name="8" Text="8" FontSize="45" FontAttributes="Bold" BackgroundColor="#2d0c98" TextColor="White" ></Button>
-                <Button Clicked="QuickPos_Clicked" HeightRequest="70" WidthRequest="70" Margin="5" Grid.Column="3" Grid.Row="4" x:Name="9" Text="9" FontSize="45" FontAttributes="Bold" BackgroundColor="#2d0c98" TextColor="White" ></Button>
-                <Button Clicked="QuickPos_Clicked" HeightRequest="70" WidthRequest="70" Margin="5" Grid.Column="4" Grid.Row="5" x:Name="10" Text="10" FontSize="45" FontAttributes="Bold" BackgroundColor="#2d0c98" TextColor="White" ></Button>
+            <Grid ColumnDefinitions="*,*" HeightRequest="70"  Grid.Row="1">
+                <Button x:Name="RestBtn" WidthRequest="150" Grid.Column="0" Text="Rest" Clicked="RestBtn_Clicked" FontSize="35" ></Button>
+                <Button x:Name="TakeBtn" WidthRequest="150" Grid.Column="1" Text="Take" Clicked="TakeBtn_Clicked" FontSize="35" ></Button>
             </Grid>
+
+
+            <Grid Grid.Row="2" VerticalOptions="End" Padding="5" HeightRequest="200" ColumnDefinitions="*,*,*,*,*" RowDefinitions="*,*">
+                <Button Clicked="QuickPos_Clicked" HeightRequest="70" WidthRequest="70" Margin="5" Grid.Column="0" Grid.Row="0" x:Name="b1" Text="1" FontSize="45" FontAttributes="Bold" BackgroundColor="#2d0c98" TextColor="White" ></Button>
+                <Button Clicked="QuickPos_Clicked" HeightRequest="70" WidthRequest="70" Margin="5" Grid.Column="1" Grid.Row="0" x:Name="b2" Text="2" FontSize="45" FontAttributes="Bold" BackgroundColor="#2d0c98" TextColor="White" ></Button>
+                <Button Clicked="QuickPos_Clicked" HeightRequest="70" WidthRequest="70" Margin="5" Grid.Column="3" Grid.Row="0" x:Name="b4" Text="4" FontSize="45" FontAttributes="Bold" BackgroundColor="#2d0c98" TextColor="White" ></Button>
+                <Button Clicked="QuickPos_Clicked" HeightRequest="70" WidthRequest="70" Margin="5" Grid.Column="2" Grid.Row="0" x:Name="b3" Text="3" FontSize="45" FontAttributes="Bold" BackgroundColor="#2d0c98" TextColor="White" ></Button>
+                <Button Clicked="QuickPos_Clicked" HeightRequest="70" WidthRequest="70" Margin="5" Grid.Column="4" Grid.Row="0" x:Name="b5" Text="5" FontSize="45" FontAttributes="Bold" BackgroundColor="#2d0c98" TextColor="White" ></Button>
+
+                <Button Clicked="QuickPos_Clicked" HeightRequest="70" WidthRequest="70" Margin="5" Grid.Column="0" Grid.Row="1" x:Name="b6" Text="6" FontSize="45" FontAttributes="Bold" BackgroundColor="#2d0c98" TextColor="White" ></Button>
+                <Button Clicked="QuickPos_Clicked" HeightRequest="70" WidthRequest="70" Margin="5" Grid.Column="1" Grid.Row="2" x:Name="b7" Text="7" FontSize="45" FontAttributes="Bold" BackgroundColor="#2d0c98" TextColor="White" ></Button>
+                <Button Clicked="QuickPos_Clicked" HeightRequest="70" WidthRequest="70" Margin="5" Grid.Column="2" Grid.Row="3" x:Name="b8" Text="8" FontSize="45" FontAttributes="Bold" BackgroundColor="#2d0c98" TextColor="White" ></Button>
+                <Button Clicked="QuickPos_Clicked" HeightRequest="70" WidthRequest="70" Margin="5" Grid.Column="3" Grid.Row="4" x:Name="b9" Text="9" FontSize="45" FontAttributes="Bold" BackgroundColor="#2d0c98" TextColor="White" ></Button>
+                <Button Clicked="QuickPos_Clicked" HeightRequest="70" WidthRequest="70" Margin="5" Grid.Column="4" Grid.Row="5" x:Name="b10" Text="10" FontSize="35" FontAttributes="Bold" BackgroundColor="#2d0c98" TextColor="White" ></Button>
+            </Grid>
+
         </Grid>
     </ScrollView>
 

@@ -13,7 +13,7 @@ namespace RobotControl
         {
             InitializeComponent();
             //instance = this;
-            Started = DateTime.Now;
+              Started = DateTime.Now;
             
         }
 
@@ -102,10 +102,20 @@ namespace RobotControl
 
         private async void Send_Clicked(object sender, EventArgs e)
         {
+            await DisplayAlert("time", GetTimeSinceStart().Seconds + "///" + LastSend, "s");
             if(GetTimeSinceStart().Seconds > LastSend + 5)
             {
                 LastSend = GetTimeSinceStart().Seconds;
                 BTComm.SendPositions();
+
+              
+                foreach(ServoData d in ServoData.ServoDataList)
+                {
+                   
+                    d.CurrentAngle = d.NewAngle;
+                }
+                
+
             }
             else
             {

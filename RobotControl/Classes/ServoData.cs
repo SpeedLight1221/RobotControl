@@ -16,11 +16,18 @@ namespace RobotControl.Classes
             new("Right_Index",'R','I',120,0),
             new("Right_Thumb",'R','T',120,0),
             new("Right_Wrist",'R','H',150,0),
-            new("Right_Pinky",'R','P',120,0),
+
             new("Right_Bicep",'R','P',40,0),
             new("Right_RotaBicep",'R','Z',120,0),
             new("Right_Shoulder",'R','S',60,30),
             new("Right_RotaShoulder",'R','P',150,0),
+
+             new("Left_Pinky",'R','P',120,0),
+            new("Left_Ring",'R','R',120,0),
+            new("Left_Middle",'R','M',120,0),
+            new("Left_Index",'R','I',120,0),
+            new("Left_Thumb",'R','T',120,0),
+             new("Left_Wrist",'R','H',150,0),
         };
 
         public ServoData(string name, char side, char symbol, byte maxAngle, byte minAngle)

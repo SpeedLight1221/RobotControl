@@ -22,59 +22,67 @@
             <AbsoluteLayout WidthRequest="400" HeightRequest="500" BackgroundColor="#202020" >
 
                 <HorizontalStackLayout HorizontalOptions="Center" BackgroundColor="Transparent" AnchorX="0" AnchorY="0" AbsoluteLayout.LayoutBounds="0,0,400,500" >
+                    <Image  Source="handwire.png" WidthRequest="400" HeightRequest="400" >
 
+                     </Image>
 
-                    <Border StrokeThickness="5" Stroke="AliceBlue" StrokeShape="RoundRectangle 40,40,40,40" >
-
-                        <Image  Source="hand.png" WidthRequest="300" HeightRequest="400" >
-
-                        </Image>
-
-                    </Border>
-
-
-                </HorizontalStackLayout>
-                <HorizontalStackLayout  BackgroundColor="Transparent"  Rotation="-90" AnchorY="00" AnchorX="00" AbsoluteLayout.LayoutBounds="0,300,500,400" >
-
-                   
-                        
-
-                        <VerticalStackLayout Margin="-40"  WidthRequest="250" VerticalOptions="Center">
-                        <Slider x:Name="LPinky_Slider"  ValueChanged="LPinkySlider_ValueChanged" MinimumTrackColor="Cyan" MaximumTrackColor="Black" ThumbColor="#202020"  VerticalOptions="Start" HorizontalOptions="Start" WidthRequest="200"  Margin="-10,0,0,0" HeightRequest="40"></Slider>
-                        <Slider x:Name="LRing_Slider" ValueChanged="LRingSlider_ValueChanged" MinimumTrackColor="Cyan" MaximumTrackColor="Black" ThumbColor="#202020"  VerticalOptions="Start" HorizontalOptions="Start" WidthRequest="200" Margin="50,0,0,0" HeightRequest="40"></Slider>
-                        <Slider x:Name="LMiddle_Slider" ValueChanged="LMiddleSlider_ValueChanged" WidthRequest="200"  MinimumTrackColor="Cyan" ThumbColor="#202020" MaximumTrackColor="Black"  VerticalOptions="Start" HorizontalOptions="Start" Margin="60,0,0,5" HeightRequest="40"></Slider>
-                        <Slider x:Name="LIndex_Slider" ValueChanged="LIndexSlider_ValueChanged" WidthRequest="200"  MinimumTrackColor="Cyan" ThumbColor="#202020" MaximumTrackColor="Black"   VerticalOptions="Start" HorizontalOptions="Start" Margin="50,0,0,25" HeightRequest="40"></Slider>
-                        <Slider x:Name="LThumb_Slider" ValueChanged="LThumbSlider_ValueChanged" WidthRequest="120"  MinimumTrackColor="Cyan" ThumbColor="#202020"  MaximumTrackColor="Black"  VerticalOptions="Start" HorizontalOptions="Start" Margin="25,0,0,-5" HeightRequest="40"></Slider>
-                        </VerticalStackLayout>
                   
 
-                   
-                    
+
                 </HorizontalStackLayout>
-                
+                <Border StrokeShape="RoundRectangle 10,20,10,20" WidthRequest="150" StrokeThickness="0"  HeightRequest="30" Rotation="-107" BackgroundColor="#CCFFFFFF"     AnchorX="0" AnchorY="0" AbsoluteLayout.LayoutBounds="-53,50,400,500"  >
+
+                        <Slider x:Name="LPinky_Slider" Maximum="120" Minimum="0"  MinimumTrackColor="Cyan" MaximumTrackColor="Black" ThumbColor="#202020"  VerticalOptions="Start" HorizontalOptions="Start" WidthRequest="150"   HeightRequest="30" ValueChanged="LPinkySlider_ValueChanged" ></Slider>
+                   
+                </Border>
+
+                <Border WidthRequest="150" StrokeShape="RoundRectangle 10,20,10,20"  HeightRequest="30" Rotation="-95" BackgroundColor="#CCFFFFFF"    AnchorX="0" AnchorY="0" AbsoluteLayout.LayoutBounds="-14,15,400,500"   >
+                    <Slider x:Name="LRing_Slider"  Maximum="120" Minimum="0"   MinimumTrackColor="Cyan" MaximumTrackColor="Black" ThumbColor="#202020"  VerticalOptions="Start" HorizontalOptions="Start" WidthRequest="150"  HeightRequest="30"   ValueChanged="LRingSlider_ValueChanged"  ></Slider>
+                </Border>
+
+                <Border WidthRequest="150" StrokeShape="RoundRectangle 10,20,10,20"  HeightRequest="30" Rotation="-90" BackgroundColor="#CCFFFFFF"    AnchorX="0" AnchorY="0" AbsoluteLayout.LayoutBounds="43,-10,400,500"   >
+                    <Slider x:Name="LMiddle_Slider" Maximum="120" Minimum="0"   WidthRequest="150"  MinimumTrackColor="Cyan" ThumbColor="#202020" MaximumTrackColor="Black"  VerticalOptions="Start" HorizontalOptions="Start"  HeightRequest="30"  ValueChanged="LMiddleSlider_ValueChanged" ></Slider>
+                </Border>
+
+                <Border WidthRequest="150" StrokeShape="RoundRectangle 10,20,10,20" HeightRequest="30" Rotation="-86" BackgroundColor="#CCFFFFFF"     AnchorX="0" AnchorY="0" AbsoluteLayout.LayoutBounds="94,-5,400,500"   >
+                    <Slider x:Name="LIndex_Slider"  Maximum="120" Minimum="0"   WidthRequest="150"  MinimumTrackColor="Cyan" ThumbColor="#202020" MaximumTrackColor="Black"   VerticalOptions="Start" HorizontalOptions="Start"  HeightRequest="30" ValueChanged="LIndexSlider_ValueChanged"  ></Slider>
+                </Border>
+
+                <Border WidthRequest="110" StrokeShape="RoundRectangle 10,20,10,20"  HeightRequest="30" Rotation="-37" BackgroundColor="#CCFFFFFF"     AnchorX="0" AnchorY="0" AbsoluteLayout.LayoutBounds="110,85,400,500"   >
+                    <Slider x:Name="LThumb_Slider" Maximum="120" Minimum="0"   WidthRequest="120"  MinimumTrackColor="Cyan" ThumbColor="#202020"  MaximumTrackColor="Black"  VerticalOptions="Start" HorizontalOptions="Start"  HeightRequest="30" ValueChanged="LThumbSlider_ValueChanged"  ></Slider>
+                </Border>
+
+
+                <Border WidthRequest="150" StrokeShape="RoundRectangle 20,20,20,20"  HeightRequest="30"  BackgroundColor="#CCFFFFFF"     AnchorX="0" AnchorY="0" AbsoluteLayout.LayoutBounds="-40,168,400,500"   >
+
+                    <Slider  x:Name="LWrist_Slider" Margin="5,10" WidthRequest="150" 
+                     Maximum="150" HeightRequest="20"  Minimum="0"  ThumbColor="#202020" 
+                     MinimumTrackColor="Cyan"  MaximumTrackColor="White" 
+                     ValueChanged="LWrist_Slider_ValueChanged">
+
+                    </Slider>
+                </Border>
+
+
 
 
 
             </AbsoluteLayout>
             <HorizontalStackLayout HorizontalOptions="CenterAndExpand"  >
-                <Label x:Name="LPinky_Label" Text="120" WidthRequest="35" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" Margin="10" HeightRequest="40" ></Label>
-                <Label x:Name="LRing_Label" Text="120" WidthRequest="35" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" Margin="10" HeightRequest="40"></Label>
-                <Label x:Name="LMiddle_Label" Text="120" WidthRequest="35" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" Margin="10" HeightRequest="40"></Label>
-                <Label x:Name="LIndex_Label" Text="120" WidthRequest="35" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" Margin="10" HeightRequest="40"></Label>
-                <Label x:Name="LThumb_Label" Text="120" WidthRequest="35" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" Margin="10" HeightRequest="40"></Label>
+                <Label x:Name="LPinky_Label" Text="0" WidthRequest="35" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" Margin="10" HeightRequest="40" ></Label>
+                <Label x:Name="LRing_Label" Text="0" WidthRequest="35" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" Margin="10" HeightRequest="40"></Label>
+                <Label x:Name="LMiddle_Label" Text="0" WidthRequest="35" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" Margin="10" HeightRequest="40"></Label>
+                <Label x:Name="LIndex_Label" Text="0" WidthRequest="35" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" Margin="10" HeightRequest="40"></Label>
+                <Label x:Name="LThumb_Label" Text="0" WidthRequest="35" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" Margin="10" HeightRequest="40"></Label>
             </HorizontalStackLayout>
         </VerticalStackLayout>
-         
 
-            
-   
-     
+
         <VerticalStackLayout   WidthRequest="400">
-            <Label TextColor="White" FontSize="35" HorizontalOptions="Center" FontAttributes="Bold" VerticalTextAlignment="Center"  Text=" Rotation"></Label>
-            
-            <Slider x:Name="SRota" Margin="5,10" WidthRequest="300" Maximum="150" HeightRequest="20"  Minimum="0" ThumbColor="White" MinimumTrackColor="Cyan"  MaximumTrackColor="White" ></Slider>
+
+            <Label x:Name="LWrist_Label"  TextColor="White" FontSize="Medium"  HorizontalOptions="Center" FontAttributes="Bold" VerticalTextAlignment="Center"  Text="120"></Label>
         </VerticalStackLayout>
-        
+
 
     </VerticalStackLayout>
 </ContentPage>
