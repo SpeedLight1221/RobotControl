@@ -49,7 +49,7 @@
                 </Border>
 
                 <Border WidthRequest="110" StrokeShape="RoundRectangle 10,20,10,20"  HeightRequest="30" Rotation="-37" BackgroundColor="#CCFFFFFF"     AnchorX="0" AnchorY="0" AbsoluteLayout.LayoutBounds="110,85,400,500"   >
-                    <Slider x:Name="LThumb_Slider" Maximum="120" Minimum="0"   WidthRequest="120"  MinimumTrackColor="Cyan" ThumbColor="#202020"  MaximumTrackColor="Black"  VerticalOptions="Start" HorizontalOptions="Start"  HeightRequest="30" ValueChanged="LThumbSlider_ValueChanged"  ></Slider>
+                    <Slider x:Name="LThumb_Slider" Maximum="120" Minimum="0"   WidthRequest="120"  MinimumTrackColor="Cyan" ThumbColor="#202020"  MaximumTrackColor="Black"  VerticalOptions="Start" HorizontalOptions="Start"  HeightRequest="30" ValueChanged="LThumbSlider_ValueChanged" ></Slider>
                 </Border>
 
 

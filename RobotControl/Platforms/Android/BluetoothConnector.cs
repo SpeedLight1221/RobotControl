@@ -25,6 +25,8 @@ namespace RobotControl.Platforms.Android.Bluetooth
             try
             {
                 socket.Connect();
+                socket.OutputStream.WriteByte(54);
+               
             }
             catch (Java.IO.IOException e)
             {

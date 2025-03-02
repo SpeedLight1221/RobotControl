@@ -96,10 +96,10 @@
 
 
         <HorizontalStackLayout HorizontalOptions="CenterAndExpand"  >
-            <Label x:Name="RShoulder_Label" Text="35" WidthRequest="35" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" Margin="10" HeightRequest="40" ></Label>
-            <Label x:Name="RRotShould_Label" Text="30" WidthRequest="35" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" Margin="10" HeightRequest="40"></Label>
-            <Label x:Name="RRotBicep_Label" Text="75" WidthRequest="35" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" Margin="10" HeightRequest="40"></Label>
             <Label x:Name="RBicep_Label" Text="0" WidthRequest="35" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" Margin="10" HeightRequest="40"></Label>
+            <Label x:Name="RRotBicep_Label" Text="75" WidthRequest="35" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" Margin="10" HeightRequest="40"></Label>
+            <Label x:Name="RRotShould_Label" Text="30" WidthRequest="35" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" Margin="10" HeightRequest="40"></Label>
+            <Label x:Name="RShoulder_Label" Text="35" WidthRequest="35" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" Margin="10" HeightRequest="40" ></Label>
            
         </HorizontalStackLayout>
 

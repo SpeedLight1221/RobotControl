@@ -1,6 +1,8 @@
 ﻿
 using RobotControl.Classes;
 using System.Diagnostics;
+using System.Timers;
+
 
 
 
@@ -8,19 +10,33 @@ namespace RobotControl
 {
     public partial class AppShell : Shell
     {
-        //public static AppShell instance;
+        System.Timers.Timer SendDelay = new System.Timers.Timer(5000);
+        bool isOnDelay = false;
         public AppShell()
         {
             InitializeComponent();
             //instance = this;
-              Started = DateTime.Now;
-            
+            SendDelay.AutoReset = false;
+            SendDelay.Elapsed += DelayOver;
+
+
+        }
+
+        private void DelayOver(Object source, ElapsedEventArgs e)
+        {
+            Debug.Print("OVer");
+            isOnDelay = false;
+            Dispatcher.Dispatch(() =>
+            {
+                SendBtn.Text = "Send";
+                SendBtn.BackgroundColor = new Color(81, 43, 212);
+            });
         }
 
         private async void BTConnBtn_Clicked(object sender, EventArgs e)
         {
-            if (BTComm.BTConnector != null && BTComm.BTConnector.isConnected() )
-            { 
+            if (BTComm.BTConnector != null && BTComm.BTConnector.isConnected())
+            {
                 BTComm.BTConnector.Disconnect();
                 BTConnBtn.Text = "⥮";
 
@@ -30,7 +46,7 @@ namespace RobotControl
             {
                 string result = await BTComm.ConnectToArduino();
 
-                if(result == "")
+                if (result == "")
                 {
                     BTConnBtn.Text = "✓";
                 }
@@ -38,15 +54,15 @@ namespace RobotControl
                 {
                     DisplayAlert("Connection failed", result, "Dismiss");
                 }
-               
+
             }
 
-            
+
 
         }
 
 
-        
+
 
 
 
@@ -93,35 +109,44 @@ namespace RobotControl
             return BTComm.BTConnector.GetConnectedDevices().FirstOrDefault(x => x == "HC-05");
         }
 
-        private DateTime Started;
-        private int LastSend = 0;
-        private TimeSpan GetTimeSinceStart()
-        {
-            return DateTime.Now - Started;
-        }
+
 
         private async void Send_Clicked(object sender, EventArgs e)
         {
-            await DisplayAlert("time", GetTimeSinceStart().Seconds + "///" + LastSend, "s");
-            if(GetTimeSinceStart().Seconds > LastSend + 5)
+            if (BTComm.BTConnector == null)
             {
-                LastSend = GetTimeSinceStart().Seconds;
-                BTComm.SendPositions();
+                await DisplayAlert("Error", "BT not connected", "Ok");
+                return;
+            }
 
+            if(isOnDelay)
+            {
+
+                await DisplayAlert("Error", "Send function is on delay", "Ok");
+                return;
+            }
               
-                foreach(ServoData d in ServoData.ServoDataList)
-                {
-                   
-                    d.CurrentAngle = d.NewAngle;
-                }
-                
 
-            }
-            else
+
+           isOnDelay= true;
+            SendBtn.Text = "...";
+            SendBtn.BackgroundColor =Colors.Gray;
+
+
+            BTComm.SendPositions();
+
+
+            foreach (ServoData d in ServoData.ServoDataList)
             {
-                await DisplayAlert("Delay", "The send button is on delay. Please wait a few seconds before sending again","Ok");
+
+                d.CurrentAngle = d.NewAngle;
             }
+            Debug.Print("Start");
+            SendDelay.Start();
+       
+
+
         }
-    } 
+    }
 
 }

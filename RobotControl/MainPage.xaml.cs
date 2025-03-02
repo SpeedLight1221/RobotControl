@@ -39,8 +39,10 @@ namespace RobotControl
 
                 foreach (ServoData s in ServoData.ServoDataList) 
                 {
-                    q.Angles.Add(new byte[]{(byte)s.Side,(byte)s.Symbol,s.CurrentAngle });
-                    
+                 
+
+                        q.Angles.Add(new byte[] { (byte)s.Side, (byte)s.Symbol, s.CurrentAngle });
+                  
                 }
                 (sender as Button).Text = newName;
                 (sender as Button).FontSize = 15;

@@ -51,7 +51,7 @@ namespace RobotControl
         private void LMiddleSlider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
             int val = (int)LMiddle_Slider.Value;
-            LRing_Label.Text = val.ToString();
+            LMiddle_Label.Text = val.ToString();
             ServoData.ServoDataList.Find(x => x.Name == "Left_Middle").NewAngle = (byte)val;
         }
 
@@ -64,7 +64,7 @@ namespace RobotControl
 
         private void LThumbSlider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-            int val = (int)LRing_Slider.Value;
+            int val = (int)LThumb_Slider.Value;
             LThumb_Label.Text = val.ToString();
             ServoData.ServoDataList.Find(x => x.Name == "Left_Thumb").NewAngle = (byte)val;
         }

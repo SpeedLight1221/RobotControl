@@ -4,6 +4,7 @@ using Android.Bluetooth;
 #endif
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,8 +16,10 @@ namespace RobotControl
     {   
        public static async void SendPositions()
        {
+            BTComm.BTConnector.Write(new byte[] { 1, 1,1});
             foreach (ServoData s in ServoData.ServoDataList.Where(x=> x.NewAngle != x.CurrentAngle)) 
             {
+                Debug.Print(s.Name + "-" + s.Symbol + "//" + (byte)s.Symbol);
                 BTComm.BTConnector.Write(new byte[] {(byte)s.Side,(byte)s.Symbol,s.NewAngle });
 
             }
