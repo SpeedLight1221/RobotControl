@@ -10,24 +10,24 @@ namespace RobotControl.Classes
     {
         public static List<ServoData> ServoDataList = new List<ServoData>
         {
-            new("Right_Pinky",'R','P',120,0),
-            new("Right_Ring",'R','R',120,0),
-            new("Right_Middle",'R','M',120,0),
+            new("Right_Pinky",'R','P',115,0),
+            new("Right_Ring",'R','R',100,0),
+            new("Right_Middle",'R','M',130,0),
             new("Right_Index",'R','I',120,0),
-            new("Right_Thumb",'R','T',120,0),
-            new("Right_Wrist",'R','H',150,0),
+            new("Right_Thumb",'R','T',90,0),
+            new("Right_Wrist",'R','H',120,45),
 
             new("Right_Bicep",'R','B',40,0),
             new("Right_RotaBicep",'R','Z',120,0),
             new("Right_Shoulder",'R','S',60,30),
             new("Right_RotaShoulder",'R','X',150,0),
 
-             new("Left_Pinky",'L','P',120,0),
-            new("Left_Ring",'L','R',120,0),
-            new("Left_Middle",'L','M',120,0),
-            new("Left_Index",'L','I',120,0),
-            new("Left_Thumb",'L','T',120,0),
-             new("Left_Wrist",'L','H',150,0),
+             new("Left_Pinky",'L','P',115,0),
+            new("Left_Ring",'L','R',115,0),
+            new("Left_Middle",'L','M',130,0),
+            new("Left_Index",'L','I',115,0),
+            new("Left_Thumb",'L','T',100,0),
+             new("Left_Wrist",'L','H',120,45),
         };
 
         public ServoData(string name, char side, char symbol, byte maxAngle, byte minAngle)

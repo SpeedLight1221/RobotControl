@@ -12,7 +12,7 @@ namespace RobotControl.Classes
         {
             new QuickPosition(){id=0,Name="Rest", Angles=new List<byte[]>()
                 {
-
+                 
 
 
 
