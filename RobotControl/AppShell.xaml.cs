@@ -10,12 +10,13 @@ namespace RobotControl
 {
     public partial class AppShell : Shell
     {
+        public static AppShell instance;
         System.Timers.Timer SendDelay = new System.Timers.Timer(5000);
-        bool isOnDelay = false;
+        public bool isOnDelay = false;
         public AppShell()
         {
             InitializeComponent();
-            //instance = this;
+            instance = this;
             SendDelay.AutoReset = false;
             SendDelay.Elapsed += DelayOver;
 

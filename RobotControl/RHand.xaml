@@ -31,31 +31,31 @@
                 </HorizontalStackLayout>
                 <Border StrokeShape="RoundRectangle 10,20,10,20" WidthRequest="150" StrokeThickness="0"  HeightRequest="30" Rotation="-74" BackgroundColor="#CCFFFFFF"     AnchorX="0" AnchorY="0" AbsoluteLayout.LayoutBounds="173,50,400,500"  >
 
-                    <Slider x:Name="RPinky_Slider" Maximum="115" Minimum="0"  MinimumTrackColor="Cyan" MaximumTrackColor="Black" ThumbColor="#202020"  VerticalOptions="Start" HorizontalOptions="Start" WidthRequest="150" ValueChanged="RPinky_Slider_ValueChanged"   HeightRequest="30"  ></Slider>
+                    <Slider x:Name="RPinky_Slider" Rotation="180"  Maximum="115" Minimum="0"  MinimumTrackColor="Cyan" MaximumTrackColor="Black" ThumbColor="#202020"  VerticalOptions="Start" HorizontalOptions="Start" WidthRequest="150" ValueChanged="RPinky_Slider_ValueChanged"   HeightRequest="30"  ></Slider>
 
                 </Border>
 
                 <Border WidthRequest="150" StrokeShape="RoundRectangle 10,20,10,20"  HeightRequest="30" Rotation="-85" BackgroundColor="#CCFFFFFF"    AnchorX="0" AnchorY="0" AbsoluteLayout.LayoutBounds="134,15,400,500"   >
-                    <Slider x:Name="RRing_Slider"  Maximum="100" Minimum="0"   MinimumTrackColor="Cyan" MaximumTrackColor="Black" ThumbColor="#202020"  VerticalOptions="Start" HorizontalOptions="Start" WidthRequest="150" ValueChanged="RRing_Slider_ValueChanged"  HeightRequest="30"     ></Slider>
+                    <Slider x:Name="RRing_Slider" Rotation="180"  Maximum="100" Minimum="0"   MinimumTrackColor="Cyan" MaximumTrackColor="Black" ThumbColor="#202020"  VerticalOptions="Start" HorizontalOptions="Start" WidthRequest="150" ValueChanged="RRing_Slider_ValueChanged"  HeightRequest="30"     ></Slider>
                 </Border>
 
                 <Border WidthRequest="150" StrokeShape="RoundRectangle 10,20,10,20"  HeightRequest="30" Rotation="-90" BackgroundColor="#CCFFFFFF"    AnchorX="0" AnchorY="0" AbsoluteLayout.LayoutBounds="77,-10,400,500"   >
-                    <Slider x:Name="RMiddle_Slider" Maximum="130" Minimum="0"   WidthRequest="150"  MinimumTrackColor="Cyan" ThumbColor="#202020" MaximumTrackColor="Black"  VerticalOptions="Start" HorizontalOptions="Start" ValueChanged="RMiddle_Slider_ValueChanged"  HeightRequest="30"  ></Slider>
+                    <Slider x:Name="RMiddle_Slider" Rotation="180"  Maximum="130" Minimum="0"   WidthRequest="150"  MinimumTrackColor="Cyan" ThumbColor="#202020" MaximumTrackColor="Black"  VerticalOptions="Start" HorizontalOptions="Start" ValueChanged="RMiddle_Slider_ValueChanged"  HeightRequest="30"  ></Slider>
                 </Border>
 
                 <Border WidthRequest="150" StrokeShape="RoundRectangle 10,20,10,20" HeightRequest="30" Rotation="-94" BackgroundColor="#CCFFFFFF"     AnchorX="0" AnchorY="0" AbsoluteLayout.LayoutBounds="25,-5,400,500"   >
-                    <Slider x:Name="RIndex_Slider"  Maximum="120" Minimum="0"   WidthRequest="150"  MinimumTrackColor="Cyan" ThumbColor="#202020" MaximumTrackColor="Black"   VerticalOptions="Start" HorizontalOptions="Start" ValueChanged="RIndex_Slider_ValueChanged"  HeightRequest="30"   ></Slider>
+                    <Slider x:Name="RIndex_Slider" Rotation="180"   Maximum="120" Minimum="0"   WidthRequest="150"  MinimumTrackColor="Cyan" ThumbColor="#202020" MaximumTrackColor="Black"   VerticalOptions="Start" HorizontalOptions="Start" ValueChanged="RIndex_Slider_ValueChanged"  HeightRequest="30"   ></Slider>
                 </Border>
 
                 <Border WidthRequest="110" StrokeShape="RoundRectangle 10,20,10,20"  HeightRequest="30" Rotation="-143" BackgroundColor="#CCFFFFFF"     AnchorX="0" AnchorY="0" AbsoluteLayout.LayoutBounds="-20,110,400,500"   >
-                    <Slider x:Name="RThumb_Slider" Maximum="90" Minimum="0"   WidthRequest="120"  MinimumTrackColor="Cyan" ThumbColor="#202020"  MaximumTrackColor="Black"  VerticalOptions="Start" HorizontalOptions="Start" ValueChanged="RThumb_Slider_ValueChanged"  HeightRequest="30"   ></Slider>
+                    <Slider x:Name="RThumb_Slider" Rotation="180"  Maximum="90" Minimum="0"   WidthRequest="110"  MinimumTrackColor="Cyan" ThumbColor="#202020"  MaximumTrackColor="Black"  VerticalOptions="Start" HorizontalOptions="Start" ValueChanged="RThumb_Slider_ValueChanged"  HeightRequest="30"   ></Slider>
                 </Border>
 
 
                 <Border WidthRequest="150" StrokeShape="RoundRectangle 20,20,20,20"  HeightRequest="30"  BackgroundColor="#CCFFFFFF"     AnchorX="0" AnchorY="0" AbsoluteLayout.LayoutBounds="40,168,400,500"   >
 
                     <Slider  x:Name="RWrist_Slider" Margin="5,10" WidthRequest="150" 
-                 Maximum="120" HeightRequest="20"  Minimum="45"  ThumbColor="#202020" 
+                 Maximum="145" Value="120" HeightRequest="20"  Minimum="45"  ThumbColor="#202020" 
                  MinimumTrackColor="Cyan"  MaximumTrackColor="White" 
                              ValueChanged="RWrist_Slider_ValueChanged"
                 >

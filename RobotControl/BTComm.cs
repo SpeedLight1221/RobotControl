@@ -19,7 +19,7 @@ namespace RobotControl
             BTComm.BTConnector.Write(new byte[] { 1, 1,1});
             foreach (ServoData s in ServoData.ServoDataList.Where(x=> x.NewAngle != x.CurrentAngle)) 
             {
-                Debug.Print(s.Name + "-" + s.Symbol + "//" + (byte)s.Symbol);
+                
                 BTComm.BTConnector.Write(new byte[] {(byte)s.Side,(byte)s.Symbol,s.NewAngle });
 
             }
@@ -79,7 +79,24 @@ namespace RobotControl
 
 
 
+        public static bool GetConnector()
+        {
+            BTComm.BTConnector = DependencyService.Get<IBluetoothConnector>();
 
+            if (BTComm.BTConnector == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public static string FindDevice()
+        {
+            return BTComm.BTConnector.GetConnectedDevices().FirstOrDefault(x => x == "HC-05");
+        }
 
 
         public static async Task<bool> CheckBTPerms()
@@ -98,26 +115,6 @@ namespace RobotControl
 #endif
 
             return false;
-        }
-
-
-        public static bool GetConnector()
-        {
-            BTComm.BTConnector = DependencyService.Get<IBluetoothConnector>();
-
-            if (BTComm.BTConnector == null)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-
-        public static string FindDevice()
-        {
-            return BTComm.BTConnector.GetConnectedDevices().FirstOrDefault(x => x == "HC-05");
         }
     }
 }

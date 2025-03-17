@@ -1,4 +1,6 @@
 ﻿using RobotControl.Classes;
+using System.Text.Json;
+using System.Text.Json.Nodes;
 
 
 namespace RobotControl
@@ -9,18 +11,21 @@ namespace RobotControl
         public MainPage()
         {
             InitializeComponent();
-            
+            ReadQPFile();
         }
 
         private async void QuickPos_Clicked(object sender, EventArgs e)
         {
             string num = (sender as Button).StyleId[1].ToString();
             byte i = byte.Parse(num); // Gets the number of the button and uses it to find a quickposition with the matching ID
-            await DisplayAlert("h", i.ToString(), "h");
+            
             QuickPosition q = QuickPosition.QuickPositions.Where(x => x.id == i).FirstOrDefault();
             if (q != null)// if  found, sends the angles saved in the quickpos to the arduino
             {
-               
+                if (AppShell.instance.isOnDelay) 
+                {
+                    await DisplayAlert("Error", "Send function is on delay", "Ok");
+                }
                 QuickPosition.SetQuickPos(q);
                
             }
@@ -47,6 +52,7 @@ namespace RobotControl
                 (sender as Button).Text = newName;
                 (sender as Button).FontSize = 15;
                 QuickPosition.QuickPositions.Add(q);
+                WriteQPFile();
             }
 
         }
@@ -62,6 +68,73 @@ namespace RobotControl
             QuickPosition.SetQuickPos(QuickPosition.QuickPositions.Find(x => x.id == 11));
             Thread.Sleep(10000);
             QuickPosition.SetQuickPos(QuickPosition.QuickPositions.Find(x => x.id == 12));
+        }
+
+
+
+        private string GetQPPath()
+        {
+            var path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            return Path.Combine(path, "qp.json");
+        }
+
+        private void ReadQPFile()
+        {
+            if(File.Exists(GetQPPath()))
+            {
+                using (StreamReader sr = new StreamReader(GetQPPath())) 
+                { 
+                    List<QuickPosition> qps = new List<QuickPosition>();
+                    qps = JsonSerializer.Deserialize<List<QuickPosition>>(sr.ReadToEnd());
+
+                   
+
+                    foreach(QuickPosition q in qps)
+                    {
+                        
+                        QuickPosition.QuickPositions.Add(q);
+                        (FindByName("b"+q.id) as Button).Text = q.Name;
+                        (FindByName("b" + q.id) as Button).FontSize = 15;
+                    }
+                    
+                
+                }
+            }
+           
+        }
+
+
+        private void WriteQPFile()
+        {
+            using (StreamWriter sw = new StreamWriter(GetQPPath(), false)) 
+            {
+                var list = QuickPosition.QuickPositions.Where(x => x.id > 0 && x.id < 11).ToList();
+                
+                 
+                
+                if (list != null &&list.Count > 0)
+                {
+                    var json = JsonSerializer.Serialize(list);
+                    sw.Write(json);
+                  
+                }
+                
+               
+
+            
+            }
+        }
+
+        private async void ResetQpBtn_Clicked(object sender, EventArgs e)
+        {
+           
+            bool selected = await DisplayAlert("Delete?", "Do you want to delete saved values?", "Yes", "No");
+            if (selected)
+            {
+                File.Delete(GetQPPath());
+                DisplayAlert("Done", "Please Closed and Reopen app for changes to take effect", "Ok");
+            }
+
         }
     }
 

@@ -15,7 +15,7 @@ namespace RobotControl.Classes
             new("Right_Middle",'R','M',130,0),
             new("Right_Index",'R','I',120,0),
             new("Right_Thumb",'R','T',90,0),
-            new("Right_Wrist",'R','H',120,45),
+            new("Right_Wrist",'R','H',145,45),
 
             new("Right_Bicep",'R','B',40,0),
             new("Right_RotaBicep",'R','Z',120,0),
@@ -29,7 +29,6 @@ namespace RobotControl.Classes
             new("Left_Thumb",'L','T',100,0),
              new("Left_Wrist",'L','H',120,45),
         };
-
         public ServoData(string name, char side, char symbol, byte maxAngle, byte minAngle)
         {
             Name = name;
@@ -39,14 +38,12 @@ namespace RobotControl.Classes
             MinAngle = minAngle;
 
         }
-
         public readonly string Name;
         public readonly char Side;
         public readonly char Symbol;
         public readonly byte MaxAngle;
         public readonly byte MinAngle;
-
-        public byte CurrentAngle = 0;
+        public byte CurrentAngle { get; set; } = 0;
         public byte NewAngle {
             get{
                 return newAngle;
@@ -65,10 +62,7 @@ namespace RobotControl.Classes
                 { 
                     newAngle = MinAngle; 
                 }
-               
             }
-        
-        
         }
         private byte newAngle = 0;
     }
